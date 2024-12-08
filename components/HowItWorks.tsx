@@ -1,28 +1,63 @@
-export default function HowItWorks() {
+export function HowItWorks() {
     return (
-        <section className="py-32">
-            <div className="grid grid-cols-1 justify-items-center items-center text-center">
-                <h2 className="text-4xl lg:text-5xl/[52px] leading-none tracking-[-0.02em]">How it works</h2>
-            </div>
-            <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 pt-10">
-                {HowItWork("Step 1: Create an account", "Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem, harum! Commodi laboriosam, enim soluta nam ipsa eveniet excepturi ipsum inventore.")}
+        <section className="w-full py-36">
+            <div className="max-w-standard mx-auto px-6">
+                <div className="flex flex-col max-w-md">
+                    <div className="mt-10 md:mt-0">
+                        <h3 className="tracking-[-0.01em] text-3xl text-pretty mt-3 text-primary">NxtGen Payment Solution</h3>
+                        <div className="text-pretty mt-3 pr-5">
+                            <p className="mb-2 text-primary">
+                                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iusto officiis optio necessitatibus totam error amet corporis harum voluptates molestiae iure!
+                            </p>
+                        </div>
+                    </div>
+                </div>
 
-                {HowItWork("Step 2: Send money", "Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem, harum! Commodi laboriosam, enim soluta nam ipsa eveniet excepturi ipsum inventore.")}
-
-                {HowItWork("Step 3: Receive payment", "Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem, harum! Commodi laboriosam, enim soluta nam ipsa eveniet excepturi ipsum inventore.")}
+                <div className="grid grid-cols-1 md:grid-cols-12 grid-rows-2 gap-6 mt-6">
+                    {features.map((item) =>
+                        <div key={item.id} className={`border border-secondary col-span-12 rounded-2xl ${item.size}`}>
+                            <div className="flex flex-col">
+                                <div className="flex z-10 w-full justify-start shrink-0 subpixel-antialiased flex-col items-start p-8">
+                                    <p className="text-xs uppercase text-accentRed">{item.tag}</p>
+                                    <h4 className="text-lg">{item.title}</h4>
+                                    <p className="pt-2 text-sm font-light">{item.desciption}</p>
+                                </div>
+                            </div>
+                        </div>
+                    )}
+                </div>
             </div>
         </section>
     )
 }
 
-const HowItWork = (header: string, description: string) => (
-    <div className="flex flex-col gap-3">
-        <div className="flex items-center gap-4">
-            <div className="inline-flex items-center justify-center shrink-0 grow-0 rounded-full bg-primary text-primaryLight p-3 w-11 h-11">
-                <span>/</span>
-            </div>
-            <h3 className="font-medium text-2xl">{header}</h3>
-        </div>
-        <p className="text-primaryGrey">{description}</p>
-    </div>
-)
+const features = [
+    {
+        id: 1,
+        tag: "payment",
+        title: "Mobile Wallet that works",
+        desciption: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iusto officiis optio necessitatibus.",
+        size: "sm:col-span-5"
+    },
+    {
+        id: 2,
+        tag: "wallet",
+        title: "Send & Receive Money",
+        desciption: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iusto officiis optio necessitatibus.",
+        size: "sm:col-span-7"
+    },
+    {
+        id: 3,
+        tag: "credit",
+        title: "Mobile Wallet that works",
+        desciption: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iusto officiis optio necessitatibus",
+        size: "sm:col-span-7"
+    },
+    {
+        id: 4,
+        tag: "analytics",
+        title: "360' view of your data",
+        desciption: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iusto officiis optio necessitatibus.",
+        size: "sm:col-span-5"
+    },
+]

@@ -9,29 +9,21 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        bgColor: '#fafafa',
-        primary: '#1d3208', // green-dark
-        primaryLight: '#65da7c',
-        primaryGrey: 'hsla(0, 0%, 40%, 1)',
-        textLight: 'rgba(255,255,255,0.75)',
-        bgHover: '#383838',
-        gridGuide: 'hsla(0, 0%, 92%, 1)',
-        brand: '#054f31'
+        background: "#151515",
+        foreground: "#332f37",
+        primary: "#0f0f0f",
+        secondary: "#e9ebdf",
+        tertiary: "#f2f2f2",
+        quaternary: "#9a9eaa33",
+        accentRed: "#ff552a",
+        muted: "#cbccc4",
       },
       fontFamily: {
         sans: ['var(--font-geist-sans)'],
         mono: ['var(--font-geist-mono)'],
       },
       maxWidth: {
-        'standard': '100rem',
-        'heroW': '38.75rem'
-      },
-      borderRadius: {
-        normal: '120px',
-        large: '128px',
-      },
-      gridTemplateColumns: {
-        '16': 'repeat(16, minmax(0, 1fr))',
+        standard: "75.5rem",
       }
     },
   },

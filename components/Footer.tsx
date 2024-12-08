@@ -1,66 +1,86 @@
+import { FacebookIcon, LinkedinIcon, TwitterIcon } from "lucide-react"
 import Link from "next/link"
+import Image from "next/image";
 
 export default function Footer() {
     return (
-        <footer className="py-16 bg-primary text-primaryLight text-sm">
-            <div className="mx-auto max-w-standard px-4">
-                <div className="flex justify-between">
-                    <div className="inline-flex items-center">
-                        <span className="text-xl font-medium">KwuickPay</span>
+        <footer className="py-6 text-primary text-sm">
+            <div className="mx-auto max-w-standard px-6">
+                <div className="flex flex-col md:flex-row justify-between">
+                    <div className="pb-6">
+                        <Link href="/" title="logo" className="flex items-center gap-1">
+                            <Image
+                                alt="Logo image"
+                                src="/static/logo.png"
+                                width={24}
+                                height={24}
+                                sizes="100vw"
+                                className="max-w-full object-cover"
+                            />
+                            <span className="font-medium text-foreground">PawpawPay</span>
+                        </Link>
                     </div>
-                    <div className="place-items-end">
-                        Copyright © <span>{new Date().getFullYear()}</span>
+                    <div className="grid grid-cols-3 gap-6">
+                        <div>
+                            <h3 className="font-medium">Company</h3>
+                            <ul role="list" className="mt-4 space-y-2 text-hover-30">
+                                <li>
+                                    <Link href="#" className="hover:text-accentOneB">Product</Link>
+                                </li>
+                                <li>
+                                    <Link href="#" className="hover:text-accentOneB">Personal</Link>
+                                </li>
+                                <li>
+                                    <Link href="#" className="hover:text-accentOneB">Business</Link>
+                                </li>
+                                <li>
+                                    <Link href="#" className="hover:text-accentOneB">About Us</Link>
+                                </li>
+                            </ul>
+                        </div>
+                        <div className="">
+                            <h3 className="font-medium">Support</h3>
+                            <ul role="list" className="mt-4 space-y-2 text-hover-30">
+                                <li>
+                                    <Link href="#" className="hover:text-accentOneB">Support Team</Link>
+                                </li>
+                                <li>
+                                    <Link href="#" className="hover:text-accentOneB">Partnership</Link>
+                                </li>
+                                <li>
+                                    <Link href="#" className="hover:text-accentOneB">Press Release</Link>
+                                </li>
+                                <li>
+                                    <Link href="#" className="hover:text-accentOneB">Contact Us</Link>
+                                </li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3 className="font-medium">Legal</h3>
+                            <ul role="list" className="mt-4 space-y-2 text-hover-30">
+                                <li>
+                                    <Link href="#" className="hover:text-accentOneB">Terms & Conditions</Link>
+                                </li>
+                                <li>
+                                    <Link href="#" className="hover:text-accentOneB">Privacy Policy</Link>
+                                </li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
-                <div className="h-full w-full lg:grid grid-cols-16 grid-rows-10">
-                    <div className="row-start-2 row-[span_8_/_span_8] col-start-4 col-[span_14_/_span_14] border-y border-y-primaryLight">
-                        <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 lg:gap-12 py-8 px-4">
-                            <div className="">
-                                <h3 className="text-base font-medium">Company</h3>
-                                <ul role="list" className="mt-4 space-y-2 text-hover-30">
-                                    <li>
-                                        <Link href="#" className="hover:text-white">Product</Link>
-                                    </li>
-                                    <li>
-                                        <Link href="#" className="hover:text-white">Features</Link>
-                                    </li>
-                                    <li>
-                                        <Link href="#" className="hover:text-white">About Us</Link>
-                                    </li>
-                                    <li>
-                                        <Link href="#" className="hover:text-white">Team</Link>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div className="">
-                                <h3 className="text-base font-medium">Support</h3>
-                                <ul role="list" className="mt-4 space-y-2 text-hover-30">
-                                    <li>
-                                        <Link href="#" className="hover:text-white">Support Team</Link>
-                                    </li>
-                                    <li>
-                                        <Link href="#" className="hover:text-white">Partnership</Link>
-                                    </li>
-                                    <li>
-                                        <Link href="#" className="hover:text-white">Press Release</Link>
-                                    </li>
-                                    <li>
-                                        <Link href="#" className="hover:text-white">Contact Us</Link>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div>
-                                <h3 className="text-base font-medium">Legal</h3>
-                                <ul role="list" className="mt-4 space-y-2 text-hover-30">
-                                    <li>
-                                        <Link href="#" className="hover:text-white">Terms & Conditions</Link>
-                                    </li>
-                                    <li>
-                                        <Link href="#" className="hover:text-white">Privacy Policy</Link>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
+                <hr className="my-6 border-gray-200 sm:mx-auto lg:my-8"></hr>
+                <div className="flex items-center justify-between">
+                    <div className="sm:text-center">
+                        <span>© 2023</span> {" "}
+                        <Link className="inline-flex items-center outline-none text-sm text-primary no-underline hover:opacity-80 active:opacity-disabled transition-opacity hover:underline" role="link" href="/">
+                            PawpawPay
+                        </Link>
+                        <span>. All Rights Reserved.</span>
+                    </div>
+                    <div className="inline-flex gap-4">
+                        <LinkedinIcon strokeWidth={1} size={18} />
+                        <TwitterIcon strokeWidth={1} size={18} />
+                        <FacebookIcon strokeWidth={1} size={18} />
                     </div>
                 </div>
             </div>

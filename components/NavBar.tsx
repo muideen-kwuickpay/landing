@@ -1,32 +1,38 @@
 import Link from "next/link";
 import Image from "next/image";
 
+const nav = [
+    { id: 1, title: "Home", href: "/" },
+    { id: 2, title: "Personal", href: "/" },
+    { id: 3, title: "Business", href: "/" },
+]
+
 export default function NavBar() {
     return (
-        <header className="fixed top-4 w-full mx-auto z-[70] px-4">
-            <div className="relative bg-white rounded-xl max-w-[1080px] mx-auto p-2 pl-4 grid-cols-[1fr,auto] grid lg:grid-cols-[1fr,2fr,1fr] lg:grid-flow-col items-center border border-solid border-[rgba(0,0,0,0.08)] shadow-[0_1px_2px_0_rgba(0,0,0,0.05)]">
-                <div className="hidden lg:grid grid-flow-col auto-cols-auto pl-6 gap-4 cursor-none">
-                    <nav className="flex items-center gap-4">
-                        <ul className="flex items-center gap-4 list-none m-0 p-0">
-                            <li><Link href="/"><span>About Us</span></Link></li>
-                        </ul>
-                    </nav>
-                </div>
-                <Link href="/" className="font-semibold pl-2 mx-auto">
+        <header className="sticky mt-4 top-4 z-50 px-2 md:px-4 flex items-center justify-between whitespace-nowrap">
+            <div className="bg-white bg-opacity-70 h-12 max-w-xl w-full mx-auto flex items-center justify-between px-4 backdrop-filter backdrop-blur-xl border border-border z-20 rounded-2xl">
+                <Link href="/" title="logo" className="flex items-center gap-1">
                     <Image
-                        alt="Logo"
-                        src="/static/KwuickPay.svg"
-                        width={100}
-                        height={40}
+                        alt="Logo image"
+                        src="/static/logo.png"
+                        width={18}
+                        height={18}
                         sizes="100vw"
-                        className="h-auto align-middle max-w-full object-cover"
+                        className="align-middle max-w-full object-cover"
                     />
+                    <span className="font-medium text-foreground">Pay</span>
                 </Link>
-                <div className="grid justify-end">
-                    <Link href="/" className="bg-primary hover:bg-bgHover text-white py-2 px-4 h-10 flex items-center justify-center rounded-lg shadow-[0_0_0_1px_transparent]">
-                        Join Waitlist
-                    </Link>
-                </div>
+
+                <nav className="hidden md:flex items-center space-x-2 text-sm mx-3">
+                    {nav.map((item) =>
+                        <Link key={item.id} href={item.href} title="Home" className="h-8 items-center justify-center p-2 inline-flex text-primary transition-opacity hover:text-foreground hover:opacity-70 duration-200">
+                            {item.title}
+                        </Link>
+                    )}
+                </nav>
+                <Link href="/" title="Get Started" className="flex items-center text-sm pr-2 border-l-[1px] border-border pl-4">
+                    Get Started
+                </Link>
             </div>
         </header>
     )

@@ -5,7 +5,7 @@ import "./globals.css";
 
 
 export const metadata: Metadata = {
-  title: "KwuickPay",
+  title: "PawPawPay",
   description: "A new generation payment platform",
 };
 

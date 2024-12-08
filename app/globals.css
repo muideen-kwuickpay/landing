@@ -3,23 +3,6 @@
 @tailwind utilities;
 
 body {
-  color: #1d3208;
-  /* background: #fafafa */
-  background: #fff
-}
-
-.squared {
-  background-image: linear-gradient(to right, #1d1e5f40 1px, transparent 1px), linear-gradient(#1d1e5f40 1px, transparent 1px);
-  background-size: 5.3125rem 5.3125rem;
-  display: flex;
-  width: 100%;
-  flex-direction: column-reverse;
-  overflow: hidden;
-  border-color: rgb(29 50 8 / 1);
-}
-
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+  background: #ffffff;
+  font-family: Arial, Helvetica, sans-serif;
 }
